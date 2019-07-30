@@ -1,0 +1,144 @@
+package javaapplication92;
+import java.util.*;
+public class JavaApplication92 {
+    public static void main(String[] args) {
+        Scanner input= new Scanner(System.in);
+       // Fichas
+        String A= "0:0";
+        String B= "0:1";
+        String C= "0:2";
+        String D= "0:3";
+        String E= "0:4";
+        String F= "0:5";
+        String G= "0:6";
+        String H= "1:1";
+        String I= "1:2";
+        String J= "1:3";
+        String K= "1:4";
+        String L= "1:5";
+        String LL= "1:6";
+        String M= "2:2";
+        String N= "2:3";
+        String Ñ= "2:4";
+        String O= "2:5";
+        String P= "2:6";
+        String Q= "3:3";
+        String R= "3:4";
+        String S= "3:5";
+        String T= "3:6";
+        String U= "4:4";
+        String V= "4:5";
+        String W= "4:6";
+        String X= "5:5";
+        String Y= "5:6";
+        String Z= "6:6";
+        Vector  <String> mazo= new Vector<String>();
+        mazo.add(A);
+        mazo.add(B);
+        mazo.add(C);
+        mazo.add(D);
+        mazo.add(E);
+        mazo.add(F);
+        mazo.add(G);
+        mazo.add(H);
+        mazo.add(I);
+        mazo.add(J);
+        mazo.add(K);
+        mazo.add(L);
+        mazo.add(LL);
+        mazo.add(M);
+        mazo.add(N);
+        mazo.add(Ñ);
+        mazo.add(O);
+        mazo.add(P);
+        mazo.add(Q);
+        mazo.add(R);
+        mazo.add(S);
+        mazo.add(T);
+        mazo.add(U);
+        mazo.add(V);
+        mazo.add(W);
+        mazo.add(X);
+        mazo.add(Y);
+        mazo.add(Z);
+        
+        System.out.println("Cuantos jugadores van a jugar");
+        byte jugadores= input.nextByte();
+        Vector <String> manoJugador= new Vector<String>();
+        
+        Vector <String> mano1= new Vector<String>();
+        Vector <String> mano2= new Vector<String>();
+        Vector <String> mano3= new Vector<String>();
+        Vector <String> mano4= new Vector<String>();
+        
+        if(jugadores== 2 || jugadores== 3){ 
+          for(int i= 0; i<7; i++){
+            Random miAleatorio= new Random();
+            int numeroAleatorio= miAleatorio.nextInt(27-i);
+            manoJugador.add(mazo.get(numeroAleatorio));
+            mazo.remove(numeroAleatorio);
+          }
+              
+          for(int i= 0; i<7; i++){
+            Random miAleatorio1= new Random();
+            int numeroAleatorio1= miAleatorio1.nextInt(27-5-i);
+            mano1.add(mazo.get(numeroAleatorio1));
+            mazo.remove(numeroAleatorio1);
+              }
+            if(jugadores== 3){
+            for(int i= 0; i<7; i++){
+              Random miAleatorio2= new Random();
+              int numeroAleatorio2= miAleatorio2.nextInt(27-5-5-i);
+              mano2.add(mazo.get(numeroAleatorio2));
+              mazo.remove(numeroAleatorio2);
+              } 
+           }
+        }
+        if(jugadores== 4 || jugadores== 5){ 
+          for(int i= 0; i<5; i++){
+            Random miAleatorio= new Random();
+            int numeroAleatorio= miAleatorio.nextInt(27-i);
+            manoJugador.add(mazo.get(numeroAleatorio));
+            mazo.remove(numeroAleatorio);
+              
+          for(i= 0; i<5; i++){
+            Random miAleatorio1= new Random();
+            int numeroAleatorio1= miAleatorio1.nextInt(27-5-i);
+            mano1.add(mazo.get(numeroAleatorio1));
+            mazo.remove(numeroAleatorio1);
+              }
+            
+          for(i= 0; i<5; i++){
+            Random miAleatorio2= new Random();
+            int numeroAleatorio2= miAleatorio2.nextInt(27-5-5-i);
+            mano2.add(mazo.get(numeroAleatorio2));
+            mazo.remove(numeroAleatorio2);
+          }
+          for(i= 0; i<5; i++){
+            Random miAleatorio3= new Random();
+            int numeroAleatorio3= miAleatorio3.nextInt(27-5-5-5-i);
+            mano3.add(mazo.get(numeroAleatorio3));
+            mazo.remove(numeroAleatorio3);
+          }
+          if(jugadores== 5){
+            for(i= 0; i<5; i++){
+              Random miAleatorio4= new Random();
+              int numeroAleatorio4= miAleatorio4.nextInt(27-5-5-5-i);
+              mano3.add(mazo.get(numeroAleatorio4));
+              mazo.remove(numeroAleatorio4);
+           }
+          }
+        }
+        }
+        
+        //Mostrar con cuales fichas quedo el jugador
+        System.out.println("jugador");
+        System.out.println(manoJugador);
+        System.out.println("maquina1");
+        System.out.println(mano1);
+        System.out.println("maquina2");
+        System.out.println(manoJugador);
+        
+    }
+}  
+
